@@ -1,0 +1,6 @@
+@Almakaber.API_HostAddress = http://localhost:5102
+
+GET {{Almakaber.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

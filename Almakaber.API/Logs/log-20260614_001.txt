@@ -1,0 +1,446 @@
+2026-06-14 12:34:30.340 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 12:34:45.277 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 12:34:46.089 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-14 12:34:46.108 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-06-14 12:34:46.138 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-06-14 12:34:46.281 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-06-14 12:34:46.308 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-14 12:34:46.313 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-14 12:34:46.338 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-06-14 12:34:46.358 +03:00 [INF] Applying migration '20260614093433_AddRemindersToggle'.
+2026-06-14 12:34:46.428 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [DeceasedSupplications] ADD [IsSubscribedToReminders] bit NOT NULL DEFAULT CAST(0 AS bit);
+2026-06-14 12:34:46.436 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260614093433_AddRemindersToggle', N'9.0.17');
+2026-06-14 12:34:46.441 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-06-14 14:05:24.587 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 14:05:40.961 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 14:05:42.776 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-14 14:05:42.793 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-06-14 14:05:42.830 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-06-14 14:05:42.938 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-06-14 14:05:42.955 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-06-14 14:05:42.957 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-06-14 14:05:42.973 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-06-14 14:05:42.997 +03:00 [INF] Applying migration '20260614110526_AddRemindersTogglev2'.
+2026-06-14 14:05:43.770 +03:00 [INF] Executed DbCommand (668ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_rename N'[DeceasedSupplications].[IsSubscribedToReminders]', N'WantsAnnualReminder', 'COLUMN';
+2026-06-14 14:05:43.777 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetUsers] ADD [RefreshToken] nvarchar(max) NULL;
+2026-06-14 14:05:43.780 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [AspNetUsers] ADD [RefreshTokenExpiryTime] datetime2 NULL;
+2026-06-14 14:05:43.784 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260614110526_AddRemindersTogglev2', N'9.0.17');
+2026-06-14 14:05:43.792 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-06-14 14:07:50.969 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 14:07:51.633 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 14:07:52.089 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 14:07:52.712 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 14:07:53.314 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:07:53.382 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:07:53.407 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 14:07:53.664 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 14:07:53.764 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 14:07:53.765 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 14:07:53.765 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 14:07:53.778 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 14:07:53.778 +03:00 [INF] Hosting environment: Development
+2026-06-14 14:07:53.779 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 14:07:53.796 +03:00 [INF] Server hasan:25172:cf5cfe5e successfully announced in 17.8201 ms
+2026-06-14 14:07:53.799 +03:00 [INF] Server hasan:25172:cf5cfe5e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 14:07:53.810 +03:00 [INF] 4 servers were removed due to timeout
+2026-06-14 14:07:53.814 +03:00 [INF] Server hasan:25172:cf5cfe5e all the dispatchers started
+2026-06-14 14:07:53.914 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 249.1718ms
+2026-06-14 14:07:53.938 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 14:07:53.938 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 14:07:53.943 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 4.5783ms
+2026-06-14 14:07:53.981 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.92ms
+2026-06-14 14:07:54.099 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 14:07:54.240 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 140.2557ms
+2026-06-14 14:07:54.575 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__today_Month_0='?' (DbType = Int32), @__today_Day_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[CreatedAt], [d].[CreatedById], [d].[DateOfDeath], [d].[DeletedAt], [d].[DeletedById], [d].[FullName], [d].[GraveId], [d].[ImageUrl], [d].[IsDeleted], [d].[UpdatedAt], [d].[UpdatedById]
+FROM [DeceasedPersons] AS [d]
+WHERE [d].[IsDeleted] = CAST(0 AS bit) AND DATEPART(month, [d].[DateOfDeath]) = @__today_Month_0 AND DATEPART(day, [d].[DateOfDeath]) = @__today_Day_1
+2026-06-14 14:08:24.621 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire - null null
+2026-06-14 14:08:24.637 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire - 401 null null 15.7803ms
+2026-06-14 14:08:28.340 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 14:08:28.344 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 2.7402ms
+2026-06-14 14:08:28.582 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 14:08:28.675 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 92.9216ms
+2026-06-14 14:25:01.950 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 14:25:02.513 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 14:25:02.888 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 14:25:03.431 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 14:25:03.950 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:25:04.018 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:25:04.036 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 14:25:04.278 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 14:25:04.377 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 14:25:04.378 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 14:25:04.378 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 14:25:04.394 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 14:25:04.395 +03:00 [INF] Hosting environment: Development
+2026-06-14 14:25:04.395 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 14:25:04.411 +03:00 [INF] Server hasan:24104:46f17089 successfully announced in 16.5836 ms
+2026-06-14 14:25:04.414 +03:00 [INF] Server hasan:24104:46f17089 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 14:25:04.429 +03:00 [INF] Server hasan:24104:46f17089 all the dispatchers started
+2026-06-14 14:25:04.527 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 247.9721ms
+2026-06-14 14:25:04.532 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 14:25:04.532 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 14:25:04.540 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 6.7716ms
+2026-06-14 14:25:04.588 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.5273ms
+2026-06-14 14:25:04.659 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 14:25:04.757 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 98.0594ms
+2026-06-14 14:27:24.216 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 14:27:24.739 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 14:27:25.143 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 14:27:25.791 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 14:27:26.389 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:27:26.466 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:27:26.494 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 14:27:26.768 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 14:27:26.884 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 14:27:26.884 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 14:27:26.884 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 14:27:26.900 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 14:27:26.900 +03:00 [INF] Hosting environment: Development
+2026-06-14 14:27:26.901 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 14:27:26.922 +03:00 [INF] Server hasan:11580:33cbca1d successfully announced in 20.3259 ms
+2026-06-14 14:27:26.926 +03:00 [INF] Server hasan:11580:33cbca1d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 14:27:26.945 +03:00 [INF] Server hasan:11580:33cbca1d all the dispatchers started
+2026-06-14 14:27:27.030 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 261.2564ms
+2026-06-14 14:27:27.033 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 14:27:27.034 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 14:27:27.047 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 11.2315ms
+2026-06-14 14:27:27.082 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.2351ms
+2026-06-14 14:27:27.150 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 14:27:27.241 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 90.9074ms
+2026-06-14 14:27:34.643 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 14:27:34.995 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 14:27:35.346 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 14:27:35.920 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 14:27:36.407 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:27:36.471 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:27:36.488 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 14:27:36.707 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 14:27:36.794 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 14:27:36.794 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 14:27:36.795 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 14:27:36.809 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 14:27:36.810 +03:00 [INF] Hosting environment: Development
+2026-06-14 14:27:36.810 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 14:27:36.819 +03:00 [INF] Server hasan:18168:8ffbac2c successfully announced in 9.2806 ms
+2026-06-14 14:27:36.822 +03:00 [INF] Server hasan:18168:8ffbac2c is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 14:27:36.835 +03:00 [INF] Server hasan:18168:8ffbac2c all the dispatchers started
+2026-06-14 14:27:36.921 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 14:27:36.920 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 14:27:36.923 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 216.2378ms
+2026-06-14 14:27:36.926 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 4.5078ms
+2026-06-14 14:27:36.960 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.5752ms
+2026-06-14 14:27:37.011 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 14:27:37.076 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 65.6124ms
+2026-06-14 14:32:36.830 +03:00 [INF] 3 servers were removed due to timeout
+2026-06-14 14:33:33.613 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 14:33:34.132 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 14:33:34.651 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 14:33:35.202 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 14:33:35.788 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:33:35.862 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:33:35.883 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 14:33:36.149 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 14:33:36.253 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 14:33:36.254 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 14:33:36.254 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 14:33:36.268 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 14:33:36.269 +03:00 [INF] Hosting environment: Development
+2026-06-14 14:33:36.269 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 14:33:36.288 +03:00 [INF] Server hasan:4540:e3a0fd28 successfully announced in 19.2137 ms
+2026-06-14 14:33:36.291 +03:00 [INF] Server hasan:4540:e3a0fd28 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 14:33:36.302 +03:00 [INF] Server hasan:4540:e3a0fd28 all the dispatchers started
+2026-06-14 14:33:36.404 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 255.8823ms
+2026-06-14 14:33:36.405 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 14:33:36.405 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 14:33:36.413 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 6.5029ms
+2026-06-14 14:33:36.461 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.731ms
+2026-06-14 14:33:36.521 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 14:33:36.646 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 125.103ms
+2026-06-14 14:34:04.348 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 14:34:04.939 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 14:34:05.276 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 14:34:05.772 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 14:34:06.243 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:34:06.307 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:34:06.324 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 14:34:06.556 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 14:34:06.647 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 14:34:06.648 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 14:34:06.648 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 14:34:06.662 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 14:34:06.663 +03:00 [INF] Hosting environment: Development
+2026-06-14 14:34:06.663 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 14:34:06.676 +03:00 [INF] Server hasan:6716:a7ebb860 successfully announced in 14.6866 ms
+2026-06-14 14:34:06.680 +03:00 [INF] Server hasan:6716:a7ebb860 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 14:34:06.690 +03:00 [INF] Server hasan:6716:a7ebb860 all the dispatchers started
+2026-06-14 14:34:06.825 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 266.673ms
+2026-06-14 14:34:06.842 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 14:34:06.849 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 14:34:06.866 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 12.9428ms
+2026-06-14 14:34:06.978 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 135.8892ms
+2026-06-14 14:34:07.057 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 14:34:07.312 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 254.7675ms
+2026-06-14 14:39:06.693 +03:00 [INF] 2 servers were removed due to timeout
+2026-06-14 14:39:17.044 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 14:39:17.710 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 14:39:18.084 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 14:39:18.705 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 14:39:19.386 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:39:19.459 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 14:39:19.482 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 14:39:19.777 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 14:39:19.878 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 14:39:19.878 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 14:39:19.878 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 14:39:19.891 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 14:39:19.891 +03:00 [INF] Hosting environment: Development
+2026-06-14 14:39:19.891 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 14:39:19.908 +03:00 [INF] Server hasan:19936:8347f8a4 successfully announced in 17.7969 ms
+2026-06-14 14:39:19.911 +03:00 [INF] Server hasan:19936:8347f8a4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 14:39:19.925 +03:00 [INF] Server hasan:19936:8347f8a4 all the dispatchers started
+2026-06-14 14:39:20.034 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 255.8823ms
+2026-06-14 14:39:20.035 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 14:39:20.035 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 14:39:20.041 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 4.8696ms
+2026-06-14 14:39:20.086 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.3936ms
+2026-06-14 14:39:20.151 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 14:39:20.232 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 80.9999ms
+2026-06-14 14:44:19.936 +03:00 [INF] 1 servers were removed due to timeout
+2026-06-14 16:06:27.683 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 16:07:10.726 +03:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+2026-06-14 16:07:10.789 +03:00 [WRN] An exception occurred while trying to perform the migration. Retrying...
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+2026-06-14 16:07:10.790 +03:00 [WRN] An exception occurred while trying to perform the migration.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+2026-06-14 16:07:10.791 +03:00 [WRN] Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection(DbConnection dedicatedConnection, Action`2 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 268
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 465
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+2026-06-14 16:07:10.793 +03:00 [ERR] Was unable to use the TryAutoDetectSchemaDependentOptions option due to an exception.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 406
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TContext,TResult](DbConnection dedicatedConnection, Func`4 func, TContext context) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 291
+   at Hangfire.SqlServer.SqlServerStorage.UseConnection[TResult](DbConnection dedicatedConnection, Func`3 action) in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 279
+   at Hangfire.SqlServer.SqlServerStorage.Initialize() in C:\projects\hangfire-525\src\Hangfire.SqlServer\SqlServerStorage.cs:line 495
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20

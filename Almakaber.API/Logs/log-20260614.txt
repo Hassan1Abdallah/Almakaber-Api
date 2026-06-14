@@ -1,0 +1,467 @@
+2026-06-14 12:21:22.139 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 12:21:23.330 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 12:21:24.780 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 12:21:25.474 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 12:21:25.993 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 12:21:26.056 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 12:21:26.074 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 12:21:26.420 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 12:21:26.500 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 12:21:26.500 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 12:21:26.500 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 12:21:26.513 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 12:21:26.513 +03:00 [INF] Hosting environment: Development
+2026-06-14 12:21:26.513 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 12:21:26.532 +03:00 [INF] Server hasan:9536:dd8d4942 successfully announced in 15.8644 ms
+2026-06-14 12:21:26.535 +03:00 [INF] Server hasan:9536:dd8d4942 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 12:21:26.544 +03:00 [INF] 2 servers were removed due to timeout
+2026-06-14 12:21:26.566 +03:00 [INF] Server hasan:9536:dd8d4942 all the dispatchers started
+2026-06-14 12:21:27.126 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__today_Month_0='?' (DbType = Int32), @__today_Day_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[CreatedAt], [d].[CreatedById], [d].[DateOfDeath], [d].[DeletedAt], [d].[DeletedById], [d].[FullName], [d].[GraveId], [d].[ImageUrl], [d].[IsDeleted], [d].[UpdatedAt], [d].[UpdatedById]
+FROM [DeceasedPersons] AS [d]
+WHERE [d].[IsDeleted] = CAST(0 AS bit) AND DATEPART(month, [d].[DateOfDeath]) = @__today_Month_0 AND DATEPART(day, [d].[DateOfDeath]) = @__today_Day_1
+2026-06-14 12:21:27.236 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 815.9476ms
+2026-06-14 12:21:27.250 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:21:27.264 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:21:27.273 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 21.4286ms
+2026-06-14 12:21:27.344 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 81.0475ms
+2026-06-14 12:21:27.396 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 12:21:27.472 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 75.9006ms
+2026-06-14 12:21:44.983 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire - null null
+2026-06-14 12:21:45.120 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire - 200 null text/html 137.3789ms
+2026-06-14 12:21:45.135 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/css-dark18230695560505 - null null
+2026-06-14 12:21:45.135 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/css182301735158677 - null null
+2026-06-14 12:21:45.139 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/js182301121146281 - null null
+2026-06-14 12:21:45.139 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:21:45.142 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 2.1083ms
+2026-06-14 12:21:45.144 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/css-dark18230695560505 - 200 null text/css 8.9344ms
+2026-06-14 12:21:45.150 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:21:45.151 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/css182301735158677 - 200 null text/css 14.9948ms
+2026-06-14 12:21:45.162 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/js182301121146281 - 200 null application/javascript 22.9354ms
+2026-06-14 12:21:45.163 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.9768ms
+2026-06-14 12:21:45.190 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/fonts/glyphicons-halflings-regular/woff2 - null null
+2026-06-14 12:21:45.192 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/fonts/glyphicons-halflings-regular/woff2 - 200 null font/woff2 2.0612ms
+2026-06-14 12:21:47.287 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:21:47.328 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 40.1699ms
+2026-06-14 12:21:49.339 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:21:49.353 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 14.2988ms
+2026-06-14 12:21:51.364 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:21:51.377 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 13.3203ms
+2026-06-14 12:21:53.388 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:21:53.404 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 15.953ms
+2026-06-14 12:21:55.140 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/recurring - null null
+2026-06-14 12:21:55.185 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/recurring - 200 null text/html 45.4259ms
+2026-06-14 12:21:55.198 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:21:55.198 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:21:55.200 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 1.2743ms
+2026-06-14 12:21:55.208 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.0683ms
+2026-06-14 12:21:57.280 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:21:57.284 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.4546ms
+2026-06-14 12:21:59.298 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:21:59.302 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.2884ms
+2026-06-14 12:22:01.321 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:01.326 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 5.4654ms
+2026-06-14 12:22:03.336 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:03.340 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.2172ms
+2026-06-14 12:22:05.354 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:05.359 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.2079ms
+2026-06-14 12:22:07.383 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:07.388 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.6154ms
+2026-06-14 12:22:09.398 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:09.402 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.6903ms
+2026-06-14 12:22:11.420 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:11.425 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.2259ms
+2026-06-14 12:22:13.447 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:13.451 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.5346ms
+2026-06-14 12:22:15.169 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/recurring/trigger - application/x-www-form-urlencoded; charset=UTF-8 26
+2026-06-14 12:22:15.186 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/recurring/trigger - 204 null null 17.0362ms
+2026-06-14 12:22:15.198 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/recurring - null null
+2026-06-14 12:22:15.214 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/recurring - 200 null text/html 15.9491ms
+2026-06-14 12:22:15.227 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:22:15.227 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:22:15.228 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.7916ms
+2026-06-14 12:22:15.236 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.0486ms
+2026-06-14 12:22:15.242 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[EmailConfirmed] = CAST(1 AS bit)
+2026-06-14 12:22:17.284 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:17.288 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.8175ms
+2026-06-14 12:22:19.300 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:19.302 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 2.0667ms
+2026-06-14 12:22:21.323 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:21.327 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.1971ms
+2026-06-14 12:22:23.337 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:23.340 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.2228ms
+2026-06-14 12:22:25.346 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:22:25.361 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 14.8707ms
+2026-06-14 12:22:26.499 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/jobs/details/2 - null null
+2026-06-14 12:22:26.541 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/jobs/details/2 - 200 null text/html 42.2564ms
+2026-06-14 12:22:26.555 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:22:26.555 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:22:26.556 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.6986ms
+2026-06-14 12:22:26.564 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.3397ms
+2026-06-14 12:22:28.636 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:28.650 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 14.2141ms
+2026-06-14 12:22:30.667 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:30.681 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 13.8274ms
+2026-06-14 12:22:32.702 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:32.706 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.3261ms
+2026-06-14 12:22:34.728 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:34.732 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.1504ms
+2026-06-14 12:22:36.748 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:36.752 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.0654ms
+2026-06-14 12:22:38.771 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:38.775 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.0026ms
+2026-06-14 12:22:40.798 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:40.802 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.3833ms
+2026-06-14 12:22:42.812 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:42.818 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 6.0611ms
+2026-06-14 12:22:44.840 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:44.845 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 5.3955ms
+2026-06-14 12:22:46.860 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:46.862 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 2.182ms
+2026-06-14 12:22:48.871 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:48.875 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.0161ms
+2026-06-14 12:22:50.888 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:50.893 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 5.4294ms
+2026-06-14 12:22:52.904 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:52.908 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.8655ms
+2026-06-14 12:22:54.915 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:54.919 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.2464ms
+2026-06-14 12:22:56.928 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:56.932 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.7749ms
+2026-06-14 12:22:58.948 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:22:58.951 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.1442ms
+2026-06-14 12:23:00.968 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:00.971 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 2.1984ms
+2026-06-14 12:23:02.729 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/recurring - null null
+2026-06-14 12:23:02.752 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/recurring - 200 null text/html 22.7177ms
+2026-06-14 12:23:02.764 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:02.764 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:02.765 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.9377ms
+2026-06-14 12:23:02.772 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.0664ms
+2026-06-14 12:23:04.824 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:23:04.827 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 2.7089ms
+2026-06-14 12:23:06.838 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:23:06.842 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.006ms
+2026-06-14 12:23:08.852 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:23:08.856 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.3417ms
+2026-06-14 12:23:10.862 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:23:10.865 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 2.9556ms
+2026-06-14 12:23:12.569 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/servers - null null
+2026-06-14 12:23:12.589 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/servers - 200 null text/html 19.7887ms
+2026-06-14 12:23:12.601 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:12.601 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:12.602 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.8145ms
+2026-06-14 12:23:12.609 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.7374ms
+2026-06-14 12:23:14.657 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:23:14.662 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.3374ms
+2026-06-14 12:23:16.677 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:23:16.681 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.2368ms
+2026-06-14 12:23:18.685 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 167
+2026-06-14 12:23:18.687 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 2.071ms
+2026-06-14 12:23:19.738 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/jobs/enqueued - null null
+2026-06-14 12:23:19.751 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/jobs/enqueued - 200 null text/html 13.0708ms
+2026-06-14 12:23:19.767 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:19.768 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:19.768 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.7887ms
+2026-06-14 12:23:19.777 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.3793ms
+2026-06-14 12:23:21.819 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:21.823 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.8516ms
+2026-06-14 12:23:22.297 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/retries - null null
+2026-06-14 12:23:22.304 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/retries - 200 null text/html 6.6998ms
+2026-06-14 12:23:22.317 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:22.317 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:22.318 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.8489ms
+2026-06-14 12:23:22.328 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.5982ms
+2026-06-14 12:23:23.097 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/jobs/enqueued - null null
+2026-06-14 12:23:23.102 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/jobs/enqueued - 200 null text/html 4.9134ms
+2026-06-14 12:23:23.117 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:23.117 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:23.117 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.8103ms
+2026-06-14 12:23:23.125 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.0576ms
+2026-06-14 12:23:24.425 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/jobs/succeeded - null null
+2026-06-14 12:23:24.451 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/jobs/succeeded - 200 null text/html 25.3586ms
+2026-06-14 12:23:24.461 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:24.461 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:24.462 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.645ms
+2026-06-14 12:23:24.470 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.5215ms
+2026-06-14 12:23:26.507 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:26.511 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.0091ms
+2026-06-14 12:23:28.528 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:28.532 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 4.2477ms
+2026-06-14 12:23:29.834 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/jobs/enqueued - null null
+2026-06-14 12:23:29.862 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/jobs/enqueued - 200 null text/html 27.8287ms
+2026-06-14 12:23:29.877 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:29.877 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:29.878 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.8989ms
+2026-06-14 12:23:29.886 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.1126ms
+2026-06-14 12:23:31.177 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/jobs/failed - null null
+2026-06-14 12:23:31.202 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/jobs/failed - 200 null text/html 24.5307ms
+2026-06-14 12:23:31.212 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:31.212 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:31.213 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.745ms
+2026-06-14 12:23:31.220 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.8699ms
+2026-06-14 12:23:31.626 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/jobs/succeeded - null null
+2026-06-14 12:23:31.654 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/jobs/succeeded - 200 null text/html 27.3684ms
+2026-06-14 12:23:31.668 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:31.668 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:31.669 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.762ms
+2026-06-14 12:23:31.676 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.2373ms
+2026-06-14 12:23:33.712 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:33.725 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 12.6466ms
+2026-06-14 12:23:35.742 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:35.753 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 10.6748ms
+2026-06-14 12:23:37.761 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:37.763 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 2.6505ms
+2026-06-14 12:23:39.774 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:39.778 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.9736ms
+2026-06-14 12:23:41.797 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:41.801 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.7912ms
+2026-06-14 12:23:43.821 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:43.825 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.5676ms
+2026-06-14 12:23:45.843 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:45.847 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.9378ms
+2026-06-14 12:23:47.858 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:47.861 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.7426ms
+2026-06-14 12:23:49.873 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:49.876 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.0517ms
+2026-06-14 12:23:51.887 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:51.891 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.772ms
+2026-06-14 12:23:53.899 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 392
+2026-06-14 12:23:53.902 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 3.0377ms
+2026-06-14 12:23:55.178 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/ - null null
+2026-06-14 12:23:55.213 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/ - 200 null text/html 35.4224ms
+2026-06-14 12:23:55.225 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:23:55.225 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:23:55.226 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 0.8424ms
+2026-06-14 12:23:55.234 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.971ms
+2026-06-14 12:23:57.292 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:23:57.304 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 11.3568ms
+2026-06-14 12:23:59.316 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:23:59.324 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 7.3698ms
+2026-06-14 12:24:01.332 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:24:01.344 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 12.7379ms
+2026-06-14 12:24:03.353 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:24:03.361 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 8.0005ms
+2026-06-14 12:24:03.758 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 12:24:03.761 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 3.1015ms
+2026-06-14 12:24:03.778 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:24:03.778 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:24:03.779 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 1.0135ms
+2026-06-14 12:24:03.788 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.3875ms
+2026-06-14 12:24:03.867 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 12:24:03.928 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 61.3553ms
+2026-06-14 12:24:34.893 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/api/Supplications?pageNumber=1&pageSize=10 - null null
+2026-06-14 12:24:37.125 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-06-14 12:24:37.129 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-06-14 12:24:37.131 +03:00 [INF] HTTP GET /api/Supplications responded 401 in 2232.3098 ms
+2026-06-14 12:24:37.132 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/api/Supplications?pageNumber=1&pageSize=10 - 401 null null 2239.5929ms
+2026-06-14 12:31:35.236 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 12:31:35.745 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 12:31:36.140 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 12:31:36.713 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 12:31:37.306 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 12:31:37.397 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 12:31:37.417 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 12:31:37.681 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 12:31:37.773 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 12:31:37.773 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 12:31:37.773 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 12:31:37.785 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 12:31:37.786 +03:00 [INF] Hosting environment: Development
+2026-06-14 12:31:37.786 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 12:31:37.802 +03:00 [INF] Server hasan:22520:a660c416 successfully announced in 15.9161 ms
+2026-06-14 12:31:37.806 +03:00 [INF] Server hasan:22520:a660c416 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 12:31:37.817 +03:00 [INF] Server hasan:22520:a660c416 all the dispatchers started
+2026-06-14 12:31:37.910 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:31:37.910 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:31:37.912 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 231.409ms
+2026-06-14 12:31:37.916 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 4.8455ms
+2026-06-14 12:31:37.954 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.5616ms
+2026-06-14 12:31:38.026 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 12:31:38.127 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 100.9753ms
+2026-06-14 12:31:45.101 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire - null null
+2026-06-14 12:31:45.115 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire - 401 null null 14.1162ms
+2026-06-14 12:32:45.826 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 12:32:46.360 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 12:32:46.693 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 12:32:47.207 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 12:32:47.700 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 12:32:47.774 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 12:32:47.791 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 12:32:48.020 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-14 12:32:48.119 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 12:32:48.120 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 12:32:48.120 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 12:32:48.131 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 12:32:48.131 +03:00 [INF] Hosting environment: Development
+2026-06-14 12:32:48.132 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 12:32:48.150 +03:00 [INF] Server hasan:12936:6bffacbc successfully announced in 16.7376 ms
+2026-06-14 12:32:48.157 +03:00 [INF] Server hasan:12936:6bffacbc is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 12:32:48.170 +03:00 [INF] Server hasan:12936:6bffacbc all the dispatchers started
+2026-06-14 12:32:48.270 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 251.0819ms
+2026-06-14 12:32:48.273 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:32:48.282 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:32:48.289 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 15.1988ms
+2026-06-14 12:32:48.320 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.0062ms
+2026-06-14 12:32:48.404 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-14 12:32:48.502 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 98.2957ms
+2026-06-14 12:32:54.839 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire - null null
+2026-06-14 12:32:55.004 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire - 200 null text/html 165.1935ms
+2026-06-14 12:32:55.016 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/css-dark182301997239683 - null null
+2026-06-14 12:32:55.016 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/css182301731219961 - null null
+2026-06-14 12:32:55.017 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire/js18230595484667 - null null
+2026-06-14 12:32:55.017 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:32:55.018 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 1.2028ms
+2026-06-14 12:32:55.023 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/css-dark182301997239683 - 200 null text/css 7.588ms
+2026-06-14 12:32:55.027 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/css182301731219961 - 200 null text/css 11.5261ms
+2026-06-14 12:32:55.028 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:32:55.038 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire/js18230595484667 - 200 null application/javascript 21.1806ms
+2026-06-14 12:32:55.052 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.4425ms
+2026-06-14 12:32:57.180 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:32:57.214 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 33.0583ms
+2026-06-14 12:32:59.231 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:32:59.237 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 6.5217ms
+2026-06-14 12:33:01.243 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:01.252 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 9.2043ms
+2026-06-14 12:33:03.266 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:03.278 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 11.0443ms
+2026-06-14 12:33:05.300 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:05.306 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 5.887ms
+2026-06-14 12:33:07.314 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:07.323 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 9.2167ms
+2026-06-14 12:33:09.335 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:09.348 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 13.277ms
+2026-06-14 12:33:10.008 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire?period=week - null null
+2026-06-14 12:33:10.033 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire?period=week - 200 null text/html 24.8068ms
+2026-06-14 12:33:10.047 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-14 12:33:10.047 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 12:33:10.048 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 1.0603ms
+2026-06-14 12:33:10.056 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.8527ms
+2026-06-14 12:33:12.122 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:12.135 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 14.0771ms
+2026-06-14 12:33:14.149 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:14.160 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 11.1412ms
+2026-06-14 12:33:16.171 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:16.179 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 7.1603ms
+2026-06-14 12:33:18.189 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:18.200 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 11.395ms
+2026-06-14 12:33:20.208 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:20.215 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 6.3237ms
+2026-06-14 12:33:22.222 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:22.264 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 42.7393ms
+2026-06-14 12:33:24.783 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:24.822 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 38.9672ms
+2026-06-14 12:33:27.791 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:27.831 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 40.2188ms
+2026-06-14 12:33:30.795 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:30.808 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 13.0979ms
+2026-06-14 12:33:33.786 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:33.795 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 8.6303ms
+2026-06-14 12:33:36.783 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:36.796 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 12.9895ms
+2026-06-14 12:33:39.791 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:39.801 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 10.1675ms
+2026-06-14 12:33:42.585 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:42.615 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 29.6706ms
+2026-06-14 12:33:44.784 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:44.795 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 11.6273ms
+2026-06-14 12:33:47.784 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:47.791 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 7.3068ms
+2026-06-14 12:33:50.790 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:50.806 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 15.3235ms
+2026-06-14 12:33:53.783 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:53.794 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 10.5105ms
+2026-06-14 12:33:56.793 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:56.801 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 7.2507ms
+2026-06-14 12:33:59.789 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:33:59.804 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 14.6338ms
+2026-06-14 12:34:02.792 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:34:02.807 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 14.4757ms
+2026-06-14 12:34:05.789 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:34:05.821 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 32.6563ms
+2026-06-14 12:34:08.784 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:34:08.795 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 10.7472ms
+2026-06-14 12:34:11.785 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:34:11.798 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 13.7239ms
+2026-06-14 12:34:14.793 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:34:14.801 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 8.0332ms
+2026-06-14 12:34:17.786 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:34:17.795 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 9.1862ms
+2026-06-14 12:34:20.574 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:34:20.616 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 200 null application/json 41.461ms
+2026-06-14 12:34:26.818 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-14 12:34:27.485 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-14 12:34:27.932 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 12:34:28.611 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-14 12:34:29.272 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 12:34:29.342 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-14 12:34:29.361 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-14 12:34:29.647 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/hangfire?period=week - null null
+2026-06-14 12:34:29.647 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/hangfire/stats - application/x-www-form-urlencoded; charset=UTF-8 485
+2026-06-14 12:34:29.714 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/hangfire/stats - 401 null null 66.6548ms
+2026-06-14 12:34:29.766 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/hangfire?period=week - 401 null null 119.8596ms
+2026-06-14 12:34:29.795 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-14 12:34:29.796 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-14 12:34:29.800 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-14 12:34:29.823 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 12:34:29.824 +03:00 [INF] Hosting environment: Development
+2026-06-14 12:34:29.824 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-14 12:34:29.856 +03:00 [INF] Server hasan:13004:3675ac27 successfully announced in 30.9838 ms
+2026-06-14 12:34:29.860 +03:00 [INF] Server hasan:13004:3675ac27 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-14 12:34:29.877 +03:00 [INF] Server hasan:13004:3675ac27 all the dispatchers started

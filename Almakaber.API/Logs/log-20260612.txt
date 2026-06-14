@@ -1,0 +1,95 @@
+2026-06-12 21:34:57.232 +03:00 [INF] Start installing Hangfire SQL objects...
+2026-06-12 21:34:57.841 +03:00 [INF] Hangfire SQL objects installed.
+2026-06-12 21:34:58.304 +03:00 [INF] User profile is available. Using 'C:\Users\my\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-12 21:34:58.830 +03:00 [WRN] Entity 'Deceased' has a global query filter defined and is the required end of a relationship with the entity 'DeceasedSupplication'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-12 21:34:59.339 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-12 21:34:59.420 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-06-12 21:34:59.444 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-12 21:34:59.717 +03:00 [WRN] The WebRootPath was not found: D:\Almakaber\src\Almakaber\Almakaber.API\wwwroot. Static files may be unavailable.
+2026-06-12 21:34:59.764 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/index.html - null null
+2026-06-12 21:34:59.891 +03:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: .@AlmakaberDb'
+2026-06-12 21:34:59.891 +03:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-06-12 21:34:59.891 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-06-12 21:34:59.906 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-12 21:34:59.906 +03:00 [INF] Hosting environment: Development
+2026-06-12 21:34:59.906 +03:00 [INF] Content root path: D:\Almakaber\src\Almakaber\Almakaber.API
+2026-06-12 21:34:59.924 +03:00 [INF] Server hasan:19376:c19e516b successfully announced in 15.9097 ms
+2026-06-12 21:34:59.926 +03:00 [INF] Server hasan:19376:c19e516b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-06-12 21:34:59.940 +03:00 [INF] Server hasan:19376:c19e516b all the dispatchers started
+2026-06-12 21:35:00.026 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/index.html - 200 null text/html;charset=utf-8 260.6939ms
+2026-06-12 21:35:00.030 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-12 21:35:00.030 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/_vs/browserLink - null null
+2026-06-12 21:35:00.037 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_framework/aspnetcore-browser-refresh.js - 200 16511 application/javascript; charset=utf-8 5.5224ms
+2026-06-12 21:35:00.076 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.3394ms
+2026-06-12 21:35:00.312 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - null null
+2026-06-12 21:35:00.404 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 92.1364ms
+2026-06-12 21:36:33.039 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/api/Deceased - multipart/form-data; boundary=----WebKitFormBoundaryOHoMt5jABdrxjsk2 3933226
+2026-06-12 21:36:33.056 +03:00 [INF] CORS policy execution successful.
+2026-06-12 21:36:33.098 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-06-12 21:36:33.102 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-06-12 21:36:33.105 +03:00 [INF] HTTP POST /api/Deceased responded 401 in 52.3027 ms
+2026-06-12 21:36:33.108 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/api/Deceased - 401 null null 68.7742ms
+2026-06-12 21:37:41.126 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/api/Auth/login - application/json 87
+2026-06-12 21:37:41.130 +03:00 [INF] CORS policy execution successful.
+2026-06-12 21:37:41.140 +03:00 [INF] Executing endpoint 'Almakaber.API.Controllers.AuthController.Login (Almakaber.API)'
+2026-06-12 21:37:41.177 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Almakaber.BLL.DTOs.Account.LoginDto) on controller Almakaber.API.Controllers.AuthController (Almakaber.API).
+2026-06-12 21:37:41.296 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreatedAt], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[OtpCode], [a].[OtpExpiryTime], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-06-12 21:37:41.503 +03:00 [INF] Executing OkObjectResult, writing value of type 'Almakaber.BLL.DTOs.Account.AuthResponseDto'.
+2026-06-12 21:37:41.513 +03:00 [INF] Executed action Almakaber.API.Controllers.AuthController.Login (Almakaber.API) in 331.6354ms
+2026-06-12 21:37:41.514 +03:00 [INF] Executed endpoint 'Almakaber.API.Controllers.AuthController.Login (Almakaber.API)'
+2026-06-12 21:37:41.516 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 387.3948 ms
+2026-06-12 21:37:41.522 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/api/Auth/login - 200 null application/json; charset=utf-8 396.3425ms
+2026-06-12 21:38:23.069 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/api/Deceased - multipart/form-data; boundary=----WebKitFormBoundaryosOcAGybbxPBaXJg 3933226
+2026-06-12 21:38:23.071 +03:00 [INF] CORS policy execution successful.
+2026-06-12 21:38:23.140 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-06-12 21:38:23.142 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-06-12 21:38:23.142 +03:00 [INF] HTTP POST /api/Deceased responded 403 in 71.9416 ms
+2026-06-12 21:38:23.143 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/api/Deceased - 403 null null 73.7357ms
+2026-06-12 21:38:43.532 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44361/api/Graves?pageNumber=1&pageSize=10 - null null
+2026-06-12 21:38:43.536 +03:00 [INF] Executing endpoint 'Almakaber.API.Controllers.GravesController.GetAllGraves (Almakaber.API)'
+2026-06-12 21:38:43.545 +03:00 [INF] Route matched with {action = "GetAllGraves", controller = "Graves"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllGraves(Int32, Int32) on controller Almakaber.API.Controllers.GravesController (Almakaber.API).
+2026-06-12 21:38:43.650 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-06-12 21:38:43.706 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Graves] AS [g]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+2026-06-12 21:38:43.716 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-06-12 21:38:43.716 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2026-06-12 21:38:43.731 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[CreatedAt], [g].[CreatedById], [g].[DeletedAt], [g].[DeletedById], [g].[GenderType], [g].[GraveNumber], [g].[IsDeleted], [g].[StreetNumber], [g].[UpdatedAt], [g].[UpdatedById]
+FROM [Graves] AS [g]
+WHERE [g].[IsDeleted] = CAST(0 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-06-12 21:38:43.780 +03:00 [INF] Executing OkObjectResult, writing value of type 'Almakaber.BLL.DTOs.Common.PagedResponse`1[[Almakaber.BLL.DTOs.Graves.GraveDto, Almakaber.BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-12 21:38:43.784 +03:00 [INF] Executed action Almakaber.API.Controllers.GravesController.GetAllGraves (Almakaber.API) in 238.2463ms
+2026-06-12 21:38:43.784 +03:00 [INF] Executed endpoint 'Almakaber.API.Controllers.GravesController.GetAllGraves (Almakaber.API)'
+2026-06-12 21:38:43.784 +03:00 [INF] HTTP GET /api/Graves responded 200 in 251.9536 ms
+2026-06-12 21:38:43.785 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44361/api/Graves?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 253.2893ms
+2026-06-12 21:39:34.805 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44361/api/Deceased - multipart/form-data; boundary=----WebKitFormBoundaryVsp87DVhSRDeG0a6 955227
+2026-06-12 21:39:34.806 +03:00 [INF] CORS policy execution successful.
+2026-06-12 21:39:34.807 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-06-12 21:39:34.807 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-06-12 21:39:34.807 +03:00 [INF] HTTP POST /api/Deceased responded 403 in 1.4252 ms
+2026-06-12 21:39:34.808 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44361/api/Deceased - 403 null null 3.135ms
+2026-06-12 21:39:59.951 +03:00 [INF] 1 servers were removed due to timeout

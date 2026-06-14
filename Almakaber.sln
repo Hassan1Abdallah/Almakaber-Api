@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36717.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almakaber.API", "Almakaber.API\Almakaber.API.csproj", "{24867ECC-F866-4989-BB72-C3200E3BBA2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almakaber.DAL", "Almakaber.DAL\Almakaber.DAL.csproj", "{BB977FFB-5C71-4FB1-9500-600D3715A700}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almakaber.BLL", "Almakaber.BLL\Almakaber.BLL.csproj", "{919EBB69-BC86-47FD-AA16-FFC5DFDC304E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almakaber.Tests", "Almakaber.Tests\Almakaber.Tests.csproj", "{A550D682-E833-466D-817A-3EF3E44DF5B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{44495DBD-2AB2-447E-92B2-A21BDF59AD0A}"
+	ProjectSection(SolutionItems) = preProject
+		deploy.yml = deploy.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24867ECC-F866-4989-BB72-C3200E3BBA2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24867ECC-F866-4989-BB72-C3200E3BBA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24867ECC-F866-4989-BB72-C3200E3BBA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24867ECC-F866-4989-BB72-C3200E3BBA2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB977FFB-5C71-4FB1-9500-600D3715A700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB977FFB-5C71-4FB1-9500-600D3715A700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB977FFB-5C71-4FB1-9500-600D3715A700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB977FFB-5C71-4FB1-9500-600D3715A700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{919EBB69-BC86-47FD-AA16-FFC5DFDC304E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{919EBB69-BC86-47FD-AA16-FFC5DFDC304E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{919EBB69-BC86-47FD-AA16-FFC5DFDC304E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{919EBB69-BC86-47FD-AA16-FFC5DFDC304E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A550D682-E833-466D-817A-3EF3E44DF5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A550D682-E833-466D-817A-3EF3E44DF5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A550D682-E833-466D-817A-3EF3E44DF5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A550D682-E833-466D-817A-3EF3E44DF5B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44495DBD-2AB2-447E-92B2-A21BDF59AD0A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7F7D0F2-7323-4F3A-A996-F5F142A030F1}
+	EndGlobalSection
+EndGlobal
