@@ -79,6 +79,6 @@ dotnet run --project Almakaber
 
 إذا واجهت أي مشكلة أثناء تشغيل المشروع محليًا، أو احتجت إلى مساعدة في إعداد قاعدة البيانات أو ربط الـ Backend بالـ Frontend، فلا تتردد في التواصل معي.
 
-**Email:** `hasan.dev.inf.com`
+**Email:** `hasan.dev.inf@gmail.com`
 
 **WhatsApp:** `+201017209315`
