@@ -5,8 +5,8 @@
 
 هذا هو المستودع الخاص بـ **Backend** لمنصة **المقابر**، وهي منصة خدمية مفتوحة المصدر تهدف إلى إدارة بيانات المتوفين، وتنظيم أماكن الدفن استدلاليًا لتسهيل الوصول إليها، وتقديم ساحة للأدعية المستمرة للمتوفين (مسبحة إلكترونية).
 
-🔗 **رابط النسخة الحية (Live Demo):** https://almakaber.vercel.app/  
-🔗 **واجهة المستخدم (Frontend):** https://github.com/Hassan1Abdallah/almakaber-frontend.git
+**رابط الديمو (Live Demo):** [almakaber.vercel.app](https://almakaber.vercel.app/)  
+🔗 ** (Frontend):** [Repo](https://github.com/Hassan1Abdallah/almakaber-frontend.git)
 
 ---
 
