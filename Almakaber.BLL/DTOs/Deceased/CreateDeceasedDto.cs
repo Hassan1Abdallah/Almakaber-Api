@@ -12,7 +12,7 @@ namespace Almakaber.BLL.DTOs.Deceased
         [Required(ErrorMessage = "تاريخ الوفاة مطلوب")]
         public DateTime DateOfDeath { get; set; }
 
-        public IFormFile Photo { get; set; }
+        public IFormFile? Photo { get; set; }
 
         [Required(ErrorMessage = "يجب تحديد المقبرة")]
         public int GraveId { get; set; }

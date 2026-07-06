@@ -66,7 +66,7 @@ namespace Almakaber.API
             })
             .AddJwtBearer(o =>
             {
-                o.RequireHttpsMetadata = false; // ممكن نخليها true في الـ Production
+                o.RequireHttpsMetadata = true; 
                 o.SaveToken = false;
                 o.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -88,7 +88,7 @@ namespace Almakaber.API
 
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<CreateGraveDtoValidator>();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+           
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
@@ -124,7 +124,7 @@ namespace Almakaber.API
             {
                 options.AddPolicy("AllowAll", builder =>
                 {
-                    builder.AllowAnyOrigin()    // وقت الـ Production ): .WithOrigins("https://www.almakaber.com")
+                    builder.AllowAnyOrigin()   
                            .AllowAnyMethod()    
                            .AllowAnyHeader();  
 
@@ -176,12 +176,7 @@ namespace Almakaber.API
             }
 
             app.UseMiddleware<GlobalExceptionMiddleware>();
-            // Configure the HTTP request pipeline.
-            //if (app.Environment.IsDevelopment())
-            //{
-            //    app.UseSwagger();
-            //    app.UseSwaggerUI();
-            //}
+            
 
             app.UseSwagger();
             app.UseSwaggerUI();

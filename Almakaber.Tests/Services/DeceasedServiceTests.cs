@@ -1,22 +1,27 @@
 ﻿using Almakaber.BLL.DTOs.Deceased;
 using Almakaber.BLL.Helpers;
 using Almakaber.BLL.Services.Implementations;
+using Almakaber.DAL.Context;
 using Almakaber.DAL.Entities;
 using Almakaber.DAL.Repositories.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore; // أضفنا الـ Namespace ده
 using Moq;
 using Xunit;
+// تأكد من وجود الـ using الخاص بـ AlmakaberDbContext (مثلاً using Almakaber.DAL.Data;)
 
 namespace Almakaber.Tests.Services
 {
     public class DeceasedServiceTests
     {
         private readonly Mock<IGenericRepository<Deceased>> _deceasedRepoMock;
-        private readonly Mock<IGenericRepository<Grave>> _graveRepoMock; 
+        private readonly Mock<IGenericRepository<Grave>> _graveRepoMock;
         private readonly Mock<IMapper> _mapperMock;
-        private readonly Mock<IFileService> _fileServiceMock; 
+        private readonly Mock<IFileService> _fileServiceMock;
         private readonly DeceasedService _deceasedService;
+        private readonly AlmakaberDbContext _dbContext; // المتغير الجديد للـ Context
+
 
         public DeceasedServiceTests()
         {
@@ -25,18 +30,23 @@ namespace Almakaber.Tests.Services
             _fileServiceMock = new Mock<IFileService>();
             _graveRepoMock = new Mock<IGenericRepository<Grave>>();
 
+            var options = new DbContextOptionsBuilder<AlmakaberDbContext>()
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) 
+                .Options;
+            _dbContext = new AlmakaberDbContext(options);
             _deceasedService = new DeceasedService(
                 _deceasedRepoMock.Object,
                 _mapperMock.Object,
                 _fileServiceMock.Object,
-                _graveRepoMock.Object
+                _graveRepoMock.Object,
+                _dbContext
             );
         }
 
         [Fact]
         public async Task AddDeceasedAsync_WhenGraveDoesNotExist_ShouldThrowArgumentException()
         {
-            var createDto = new CreateDeceasedDto { GraveId = 99 }; 
+            var createDto = new CreateDeceasedDto { GraveId = 99 };
 
             _graveRepoMock
                 .Setup(repo => repo.GetByIdAsync(createDto.GraveId))

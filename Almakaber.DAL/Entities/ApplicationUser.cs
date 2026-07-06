@@ -15,6 +15,7 @@ namespace Almakaber.DAL.Entities
         public DateTime? OtpExpiryTime { get; set; }
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpiryTime { get; set; }
+        public bool IsBlocked { get; set; } = false;
         public virtual ICollection<DeceasedSupplication> DeceasedSupplications { get; set; }
 
         public ApplicationUser()

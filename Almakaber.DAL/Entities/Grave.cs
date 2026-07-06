@@ -20,7 +20,6 @@ namespace Almakaber.DAL.Entities
             DeceasedPersons = new HashSet<Deceased>();
         }
 
-        // Helper Method للـ Update
         public void UpdateGrave(int streetNumber, int graveNumber, string genderType, string updatedByUserId)
         {
             StreetNumber = streetNumber;

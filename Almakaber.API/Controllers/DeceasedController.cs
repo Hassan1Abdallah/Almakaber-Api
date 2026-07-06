@@ -18,21 +18,17 @@ namespace Almakaber.API.Controllers
             _deceasedService = deceasedService;
         }
 
-        // GET: /api/deceased
         [HttpGet]
+        [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResponse<DeceasedDto>))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> GetAllDeceased([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+        public async Task<IActionResult> GetAllDeceased([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, [FromQuery] string? searchName = null, [FromQuery] string? sortField = null, [FromQuery] int sortOrder = -1)
         {
-            if (pageNumber < 1) pageNumber = 1;
-            if (pageSize < 1 || pageSize > 50) pageSize = 10;
-
-            var pagedResult = await _deceasedService.GetAllDeceasedAsync(pageNumber, pageSize);
-            return Ok(pagedResult);
+            var result = await _deceasedService.GetAllDeceasedAsync(pageNumber, pageSize, searchName, sortField, sortOrder);
+            return Ok(result);
         }
 
-        // GET: /api/deceased/5
-        [Authorize(Roles = "Admin")]
+        
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(DeceasedDto))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -47,7 +43,6 @@ namespace Almakaber.API.Controllers
             return Ok(deceased);
         }
 
-        // POST: /api/deceased
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(DeceasedDto))]
@@ -61,7 +56,6 @@ namespace Almakaber.API.Controllers
             return CreatedAtAction(nameof(GetDeceasedById), new { id = createdDeceased.Id }, createdDeceased);
         }
 
-        // PUT: /api/deceased/5
         [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -78,7 +72,6 @@ namespace Almakaber.API.Controllers
             return Ok(new { message = "تم تعديل بيانات المتوفي بنجاح." });
         }
 
-        // DELETE: /api/deceased/5
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]

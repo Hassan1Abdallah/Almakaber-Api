@@ -11,7 +11,7 @@ namespace Almakaber.DAL.Entities
 
         [Required]
         public DateTime DateOfDeath { get; set; }
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         [Required]
         public int GraveId { get; set; }

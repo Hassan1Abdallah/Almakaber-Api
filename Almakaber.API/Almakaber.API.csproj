@@ -25,8 +25,4 @@
     <ProjectReference Include="..\Almakaber.BLL\Almakaber.BLL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
 </Project>

@@ -1,5 +1,7 @@
 ﻿using Almakaber.BLL.DTOs.Account;
 using Almakaber.BLL.Services.Interfaces;
+using Azure.Core;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Almakaber.API.Controllers
@@ -20,7 +22,6 @@ namespace Almakaber.API.Controllers
         {
             var result = await _accountService.RegisterAsync(dto);
 
-            // لو مسجش بنجاح ومفيش رسالة نجاح الـ OTP، بنرجع 400 Bad Request
             if (!result.IsAuthenticated && !result.Message.Contains("بنجاح"))
                 return BadRequest(new { message = result.Message });
 
@@ -41,12 +42,23 @@ namespace Almakaber.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
+            
             var result = await _accountService.LoginAsync(dto);
 
             if (!result.IsAuthenticated)
-                return Unauthorized(new { message = result.Message }); // 401 Unauthorized
+                return Unauthorized(new { message = result.Message }); 
 
             return Ok(result);
+        }
+
+        [HttpPost("resend-otp")]
+        public async Task<IActionResult> ResendOtp([FromBody] ResendOtpDto dto)
+        {
+            var result = await _accountService.ResendOtpAsync(dto.Email);
+            if (!result.IsAuthenticated)
+                return BadRequest(new { message = result.Message });
+
+            return Ok(new { message = result.Message });
         }
 
         [HttpPost("forgot-password")]
@@ -54,8 +66,6 @@ namespace Almakaber.API.Controllers
         {
             var result = await _accountService.ForgotPasswordAsync(dto);
 
-            // في حالات نسيان الباسورد، دايماً بنرجع 200 OK لأسباب أمنية 
-            // عشان الهاكرز ميعرفوش هل الإيميل ده متسجل في الداتا بيز فعلاً ولا لأ
             return Ok(new { message = result.Message });
         }
 

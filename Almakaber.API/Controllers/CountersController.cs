@@ -31,7 +31,6 @@ namespace Almakaber.API.Controllers
             throw new UnauthorizedAccessException("غير مصرح لك بالوصول.");
         }
 
-        // GET: api/counters/deceased/5
         [HttpGet("deceased/{deceasedId}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<DeceasedSupplicationDto>))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -43,7 +42,6 @@ namespace Almakaber.API.Controllers
             return Ok(counters);
         }
 
-        // POST: api/counters/deceased/5/supplication/2/increment
         [HttpPost("deceased/{deceasedId}/supplication/{supplicationId}/increment")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

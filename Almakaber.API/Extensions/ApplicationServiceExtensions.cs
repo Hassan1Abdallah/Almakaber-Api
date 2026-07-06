@@ -11,10 +11,8 @@ namespace Almakaber.API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            // Repositories
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
-            // Services
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IGraveService, GraveService>();
             services.AddScoped<IDeceasedService, DeceasedService>();

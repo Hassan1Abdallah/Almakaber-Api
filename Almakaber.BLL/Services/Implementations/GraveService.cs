@@ -43,13 +43,11 @@ namespace Almakaber.BLL.Services.Implementations
 
         public async Task<GraveDto> AddGraveAsync(CreateGraveDto dto)
         {
-            // بنحول الـ DTO اللي جاي من الفرونت لـ Entity عشان الداتا بيز تفهمه
             var grave = _mapper.Map<Grave>(dto);
 
             await _repository.AddAsync(grave);
-            await _repository.SaveChangesAsync(); // هنا الـ CreatedAt بتتظبط أوتوماتيك
+            await _repository.SaveChangesAsync();
 
-            // بنرجع الـ DTO بعد ما خد Id من الداتا بيز
             return _mapper.Map<GraveDto>(grave);
         }
 
@@ -58,13 +56,12 @@ namespace Almakaber.BLL.Services.Implementations
             var grave = await _repository.GetByIdAsync(id);
             if (grave == null) return false;
 
-            // بنحدث البيانات
             grave.StreetNumber = dto.StreetNumber;
             grave.GraveNumber = dto.GraveNumber;
             grave.GenderType = dto.GenderType;
 
             _repository.Update(grave);
-            await _repository.SaveChangesAsync(); // هنا الـ UpdatedAt بتتظبط أوتوماتيك
+            await _repository.SaveChangesAsync(); 
 
             return true;
         }
@@ -75,7 +72,7 @@ namespace Almakaber.BLL.Services.Implementations
             if (grave == null) return false;
 
             _repository.Delete(grave);
-            await _repository.SaveChangesAsync(); // هنا الـ IsDeleted بتتظبط لـ True أوتوماتيك
+            await _repository.SaveChangesAsync(); 
 
             return true;
         }

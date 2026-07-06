@@ -48,9 +48,6 @@ namespace Almakaber.BLL.Helpers.Email
             }
         }
 
-        // --------------------------------------------------
-        // القوالب الخاصة بمشروع المقابر (Templates)
-        // --------------------------------------------------
         public string GetOtpTemplate(string userName, string otpCode, string purpose)
         {
             return $@"

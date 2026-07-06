@@ -18,7 +18,6 @@ namespace Almakaber.API.Controllers
             _graveService = graveService;
         }
 
-        // GET: /api/graves
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PagedResponse<GraveDto>))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -31,7 +30,6 @@ namespace Almakaber.API.Controllers
             return Ok(pagedResult);
         }
 
-        // GET: /api/graves/5
         [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GraveDto))]
@@ -47,7 +45,6 @@ namespace Almakaber.API.Controllers
             return Ok(grave);
         }
 
-        // POST: /api/graves
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(GraveDto))]
@@ -61,7 +58,6 @@ namespace Almakaber.API.Controllers
             return CreatedAtAction(nameof(GetGraveById), new { id = createdGrave.Id }, createdGrave);
         }
 
-        // PUT: /api/graves/5
         [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -79,7 +75,6 @@ namespace Almakaber.API.Controllers
             return Ok(new { message = "تم تعديل بيانات المقبرة بنجاح." });
         }
 
-        // DELETE: /api/graves/5
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]

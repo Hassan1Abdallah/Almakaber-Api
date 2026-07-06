@@ -10,5 +10,8 @@ namespace Almakaber.BLL.Services.Interfaces
         Task<AuthResponseDto> ForgotPasswordAsync(ForgotPasswordDto dto);
         Task<AuthResponseDto> ResetPasswordWithOtpAsync(ResetPasswordDto dto);
         Task<AuthResponseDto> RefreshTokenAsync(RefreshTokenDto dto);
+        Task<AuthResponseDto> ResendOtpAsync(string email);
+        Task<(IEnumerable<UserDto> Data, int TotalCount)> GetAllUsersAsync(int pageNumber, int pageSize, string? searchName = null, string? sortField = null, int sortOrder = 1);
+        Task<AuthResponseDto> ToggleBlockUserAsync(string userId);
     }
 }

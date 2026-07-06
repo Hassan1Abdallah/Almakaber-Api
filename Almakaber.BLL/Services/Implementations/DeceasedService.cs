@@ -2,9 +2,11 @@
 using Almakaber.BLL.DTOs.Deceased;
 using Almakaber.BLL.Helpers;
 using Almakaber.BLL.Services.Interfaces;
+using Almakaber.DAL.Context;
 using Almakaber.DAL.Entities;
 using Almakaber.DAL.Repositories.Interfaces;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace Almakaber.BLL.Services.Implementations
 {
@@ -14,18 +16,37 @@ namespace Almakaber.BLL.Services.Implementations
         private readonly IGenericRepository<Grave> _graveRepository;
         private readonly IMapper _mapper;
         private readonly IFileService _fileService;
+        private readonly AlmakaberDbContext _context;
 
-        public DeceasedService(IGenericRepository<Deceased> repository, IMapper mapper, IFileService fileService, IGenericRepository<Grave> graveRepository)
+        public DeceasedService(IGenericRepository<Deceased> repository, IMapper mapper, IFileService fileService, IGenericRepository<Grave> graveRepository, AlmakaberDbContext context)
         {
             _repository = repository;
             _mapper = mapper;
             _fileService = fileService;
             _graveRepository = graveRepository;
+            _context = context;
         }
 
-        public async Task<PagedResponse<DeceasedDto>> GetAllDeceasedAsync(int pageNumber, int pageSize)
+        public async Task<PagedResponse<DeceasedDto>> GetAllDeceasedAsync(int pageNumber, int pageSize, string? searchName = null, string? sortField = null, int sortOrder = -1)
         {
-            var (data, totalCount) = await _repository.GetPagedAsync(pageNumber, pageSize, d => d.Grave);
+            var query = _context.DeceasedPersons.Include(d => d.Grave).AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(searchName))
+            {
+                query = query.Where(d => d.FullName.Contains(searchName));
+            }
+
+            bool isAscending = sortOrder == 1;
+            query = sortField switch
+            {
+                "fullName" => isAscending ? query.OrderBy(d => d.FullName) : query.OrderByDescending(d => d.FullName),
+                "dateOfDeath" => isAscending ? query.OrderBy(d => d.DateOfDeath) : query.OrderByDescending(d => d.DateOfDeath),
+                
+                _ => isAscending ? query.OrderBy(d => d.Id) : query.OrderByDescending(d => d.Id)
+            };
+
+            var totalCount = await query.CountAsync();
+            var data = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
 
             var mappedData = _mapper.Map<IEnumerable<DeceasedDto>>(data);
 
@@ -54,9 +75,13 @@ namespace Almakaber.BLL.Services.Implementations
             }
             var deceased = _mapper.Map<Deceased>(dto);
 
-            if (dto.Photo != null)
+            if (dto.Photo != null && dto.Photo.Length > 0)
             {
                 deceased.ImageUrl = await _fileService.SaveFileAsync(dto.Photo, "deceased");
+            }
+            else
+            {
+                deceased.ImageUrl = "/images/default-avatar.png"; 
             }
 
             await _repository.AddAsync(deceased);
@@ -79,7 +104,14 @@ namespace Almakaber.BLL.Services.Implementations
             deceased.FullName = dto.FullName;
             deceased.DateOfDeath = dto.DateOfDeath;
             deceased.GraveId = dto.GraveId;
-            deceased.ImageUrl = await _fileService.SaveFileAsync(dto.Photo, "deceased");
+            if (dto.Photo != null && dto.Photo.Length > 0)
+            {
+                deceased.ImageUrl = await _fileService.SaveFileAsync(dto.Photo, "deceased");
+            }
+            else if (string.IsNullOrEmpty(deceased.ImageUrl))
+            {
+                deceased.ImageUrl = "/images/default-avatar.png";
+            }   
 
             _repository.Update(deceased);
             await _repository.SaveChangesAsync();

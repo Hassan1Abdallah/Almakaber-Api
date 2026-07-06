@@ -7,7 +7,6 @@
         public DateTime DateOfDeath { get; set; }
         public string ImageUrl { get; set; }
 
-        // بيانات المقبرة عشان نعرضها في صفحة المتوفي مباشرة
         public int GraveId { get; set; }
         public int StreetNumber { get; set; }
         public int GraveNumber { get; set; }
